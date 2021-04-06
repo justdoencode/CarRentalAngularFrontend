@@ -11,6 +11,7 @@ import { CarDetailService } from 'src/app/services/carServices/car-detail.servic
 export class CarDetailComponent implements OnInit {
 
   carDetails:CarDetail[]=[];
+  currentCar:CarDetail;
   dataLoaded=false;
   constructor(private carDetailService:CarDetailService, private activatedRoute:ActivatedRoute) { }
 
@@ -48,6 +49,10 @@ export class CarDetailComponent implements OnInit {
       this.carDetails=response.data;
       this.dataLoaded=true;
     })
+  }
+
+  setCurrentCar(car:CarDetail){
+    this.currentCar=car;
   }
 
 }
