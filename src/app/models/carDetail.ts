@@ -6,4 +6,6 @@ export interface CarDetail{
     dailyPrice:number;
     modelYear:number;
     carImage:string;
+    rentDate:Date;
+    returnDate:Date;
 }

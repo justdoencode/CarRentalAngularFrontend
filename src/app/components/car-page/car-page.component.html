@@ -9,27 +9,19 @@
             <li class="list-group-item"><strong>Model Year: </strong>{{carDetail.modelYear}}</li>
         </ul>
     </div>
+    <br>
+    <div>
+        <div class="input-group mb-3">
+            <span for="startDate" class="input-group-text" id="basic-addon1">Start Date</span>
+            <input type="date" [(ngModel)]="startDate" class="form-control" id="startDate"  aria-describedby="basic-addon1">
+            
+            <span class="input-group-text" id="basic-addon2">End Date</span>
+            <input type="date" value="" class="form-control"  aria-describedby="basic-addon2">
+            <button (click)="rentTheCar()">Rent The Car</button>
+          </div>
+    </div>
+    <div>
+        
+    </div>
+    
 </div>
-
-<!-- <table class="table">
-
-    <thead>
-        <tr>
-            <th>Id</th>
-            <th>Description</th>
-            <th>Brand</th>
-            <th>Color</th>
-            <th>Daily Price</th>
-            <th>Model Year</th>
-        </tr>
-    </thead>
-
-    <tr>
-        <td>{{carDetail.id}}</td>
-        <td>{{carDetail.description}}</td>
-        <td>{{carDetail.brandName}}</td>
-        <td>{{carDetail.colorName}}</td>
-        <td>{{carDetail.dailyPrice}}</td>
-        <td>{{carDetail.modelYear}}</td>
-    </tr>
-</table> -->

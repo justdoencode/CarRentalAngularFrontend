@@ -11,6 +11,7 @@ import { CarPageService } from 'src/app/services/carServices/car-page.service';
 export class CarPageComponent implements OnInit {
 
   carDetail:CarDetail;
+  startDate:Date;
   basePath="https://localhost:44361/"
   constructor(private carPageService:CarPageService, private activatedRoute:ActivatedRoute) { }
 
@@ -24,6 +25,10 @@ export class CarPageComponent implements OnInit {
     this.carPageService.getCarDetailById(carId).subscribe(response=>{
       this.carDetail=response.data;
     })
+  }
+
+  rentTheCar(){
+    
   }
 
 }

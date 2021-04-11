@@ -1,6 +1,30 @@
 <div *ngIf="dataLoaded==false" class="spinner-border text-secondary" role="status">
     <span class="visually-hidden"></span>
   </div>
+  <br>
+  <div>
+      <select [(ngModel)]="selectedBrandId" (ngModelChange)="setSelectedBrandId($event)" class="form-select form-select-sm" aria-label=".form-select-sm example">
+            <option disable value="0">Brands</option>
+            <option  *ngFor="let carBrand of carBrands" [value]="carBrand.id">{{carBrand.name}}</option>
+        </select>
+  
+        <select [(ngModel)]="selectedColorId" (ngModelChange)="setSelectedColorId($event)" class="form-select form-select-sm" aria-label=".form-select-sm example">
+            <option disable value="0">Colors</option>
+            <option *ngFor="let carColor of carColors" [value]="carColor.id">{{carColor.name}}</option>
+        </select>
+
+        <button (click)="getFilterCars()" type="button">Filtrele</button>
+  </div>
+  <br>
+
+  <div class="mb-3">
+    <label for="filterText" class="form-label">Araba Markası, Modeli Veya Rengi Giriniz :</label>
+    <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" 
+    placeholder="Arama ifadesi giriniz">
+  </div>
+  <div *ngIf="filterText" class="alert alert-primary">
+    {{filterText}} aradınız
+  </div>
 
 <table *ngIf="dataLoaded==true" class="table">
 
@@ -15,7 +39,7 @@
         </tr>
     </thead>
 
-    <tr *ngFor="let carDetail of carDetails"
+    <tr *ngFor="let carDetail of carDetails | searchPipe:filterText "
         routerLink="/cars/car/{{carDetail.id}}"
         ng-click="setCurrentCar(car)">
         <td>{{carDetail.id}}</td>
