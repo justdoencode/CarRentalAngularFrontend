@@ -1,3 +1,5 @@
+=> CarRental projesi, bir kiralama sistemi kurmayı amaçlamıştır. => Projenin Backend kısmı CarRentalNetCoreBackend isimli repository profilimde yer almaktadır.
+
 # CarRental
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.6.
